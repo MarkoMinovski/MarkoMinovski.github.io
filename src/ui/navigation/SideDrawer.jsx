@@ -31,9 +31,9 @@ const SideDrawer = () => {
     }
 
     const closeDrawer = () => {
-        setAnimate(false); // trigger exit animation
+        setAnimate(false);
         setTimeout(() => {
-            setOpen(false); // unmount after animation
+            setOpen(false);
         }, 300);
     };
 
