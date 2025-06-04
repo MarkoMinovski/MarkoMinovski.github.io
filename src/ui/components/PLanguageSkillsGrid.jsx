@@ -9,7 +9,7 @@ const PLanguageSkillsGrid = () => {
             <Typography variant="h3" sx={{ fontWeight: 'light', textAlign: 'center', marginBottom: '5rem' }}>
                 Highlighted Programming Skills:</Typography>
             <Box maxWidth="xs" className={"hello"} sx={{ display: 'flex', flexGrow: 1, alignItems: "center",
-                justifyContent: "center" }}>
+                justifyContent: "center", marginBottom: '10rem' }}>
                 <Grid container spacing={2} sx={{ width: '75%', }}>
                     <Grid size={4}>
                         <Card sx={{ minWidth: 275, borderLeft: '5px solid #306998', boxShadow: 3, borderRadius: 2 }}>
@@ -32,7 +32,7 @@ const PLanguageSkillsGrid = () => {
 
                                 <Typography variant="body2" color="text.secondary">
                                     🛠 Libraries / Frameworks:
-                                    NumPy, Flask, Django, SQLAlchemy, Pygame, MongoDB Driver, scikit-learn
+                                    NumPy, Flask, Django, SQLAlchemy, Pygame, MongoDB Driver, scikit-learn, BS4
                                 </Typography>
                             </CardContent>
                         </Card>

@@ -1,15 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import {FaGithub, FaRegCalendar} from "react-icons/fa";
 import {FaLinkedin, FaRegClock} from "react-icons/fa6";
 import {Tooltip} from "@mui/material";
@@ -20,6 +14,7 @@ const SideDrawer = () => {
     const [open, setOpen] = React.useState(false);
     const [timeString, setTimeString] = React.useState('');
     const [dateString, setDateString] = React.useState('');
+    const [animate, setAnimate] = React.useState(false);
 
     useEffect(() => {
         const updateTimer = setInterval(() => {
@@ -32,22 +27,27 @@ const SideDrawer = () => {
 
     const openDrawer = () => {
         setOpen(true);
+        setTimeout(() => setAnimate(true), 10);
     }
 
     const closeDrawer = () => {
-        setOpen(false);
-    }
+        setAnimate(false); // trigger exit animation
+        setTimeout(() => {
+            setOpen(false); // unmount after animation
+        }, 300);
+    };
 
     const DrawerList = (
-        <Box sx={{ width: 350, position: 'absolute', left: 0, top: 0, height: '100vh',
+        <Box sx={{ width: 350, position: 'fixed', left: 0, top: 0, height: '100vh',
             backgroundColor: 'white', color: 'black', display: 'flex', flexDirection: 'column',
-            justifyContent: 'center' }} role="presentation">
+            justifyContent: 'center', transform: animate ? 'translateX(0)' : 'translateX(-100%)',
+            transition: 'transform 0.3s ease-in-out' }} role="presentation">
             <Box sx={{ mt: 25, mb: 5 }}>
                 <List sx={{ height: '50vh' }}>
                     {/* a single list item */}
                     <ListItem>
                         <Tooltip title={"Check out my projects!"}>
-                            <ListItemButton href={"https://github.com/MarkoMinovski"}
+                            <ListItemButton href={"https://github.com/MarkoMinovski"} rel={"nofollow"}
                                             sx={{ textAlign: 'center' }} target="_blank">
 
                                 <ListItemIcon>
@@ -60,7 +60,8 @@ const SideDrawer = () => {
 
                     <ListItem>
                         <Tooltip title={"My profile!"}>
-                            <ListItemButton href={"https://github.com/MarkoMinovski"} target="_blank">
+                            <ListItemButton href={"www.linkedin.com/in/marko-minovski-32403936a"} rel={"nofollow"}
+                                            target="_blank">
                                 <ListItemIcon>
                                     <FaLinkedin />
                                 </ListItemIcon>
@@ -88,7 +89,7 @@ const SideDrawer = () => {
                 <List>
                     <ListItem>
                         <Tooltip title={"My Time Right Now"}>
-                            <ListItemButton href={""}>
+                            <ListItemButton disabled={true} href={null}>
                                 <ListItemIcon>
                                     <FaRegClock />
                                 </ListItemIcon>
@@ -98,7 +99,7 @@ const SideDrawer = () => {
                     </ListItem>
                     <ListItem>
                         <Tooltip title={""}>
-                            <ListItemButton href={""}>
+                            <ListItemButton disabled={true} href={null}>
                                 <ListItemIcon>
                                     <FaRegCalendar />
                                 </ListItemIcon>
@@ -114,7 +115,7 @@ const SideDrawer = () => {
 
     if (!open) {
         return (
-            <Box sx={{ position: 'absolute', left: 0, top: '50vh', display: 'inline' }}>
+            <Box sx={{ position: 'fixed', left: 0, top: '50vh', display: 'inline' }}>
                 <button
                     type="button"
                     onClick={openDrawer}
@@ -146,7 +147,30 @@ const SideDrawer = () => {
         return (
             <>
                 {DrawerList}
-                <Box sx={{ position: 'absolute', left: '355px', top: '50vh', display: 'inline' }}>
+
+                <Box
+                    onClick={closeDrawer}
+                    sx={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 350,
+                        width: 'calc(100% - 350px)',
+                        height: '100vh',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        opacity: animate ? 1 : 0,
+                        transition: 'opacity 0.3s ease-in-out',
+                        zIndex: 10
+                    }}
+                />
+
+                <Box
+                    sx={{ position: 'fixed',
+                    left: animate ? '355px' : '0px',
+                    top: '50vh',
+                    display: 'inline',
+                    transition: 'left 0.3s ease-in-out',
+                    zIndex: 30 }}
+                >
                     <button
                         type="button"
                         onClick={closeDrawer}
