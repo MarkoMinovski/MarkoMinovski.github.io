@@ -48,7 +48,7 @@ const ToolsGrid = () => {
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
                                     <SiKubernetes size={64} />
-                                    <Typography variant="h4" sx={{ marginLeft: '1rem' }}>Kubernetes</Typography>
+                                    <Typography variant="h5" sx={{ marginLeft: '1rem' }}>Kubernetes</Typography>
                                 </Box>
 
                                 <Typography sx={{ color: 'text.secondary', mb: 1, fontStyle: 'oblique' }}>
