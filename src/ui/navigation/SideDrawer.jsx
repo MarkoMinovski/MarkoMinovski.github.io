@@ -47,7 +47,7 @@ const SideDrawer = () => {
                     {/* a single list item */}
                     <ListItem>
                         <Tooltip title={"Check out my projects!"}>
-                            <ListItemButton href={"https://github.com/MarkoMinovski"} rel={"nofollow"}
+                            <ListItemButton href={"https://github.com/MarkoMinovski"} rel={"noopener"}
                                             sx={{ textAlign: 'center' }} target="_blank">
 
                                 <ListItemIcon>
@@ -60,7 +60,8 @@ const SideDrawer = () => {
 
                     <ListItem>
                         <Tooltip title={"My profile!"}>
-                            <ListItemButton href={"www.linkedin.com/in/marko-minovski-32403936a"} rel={"nofollow"}
+                            <ListItemButton href={"https://www.linkedin.com/in/marko-minovski-32403936a"}
+                                            rel={"noopener"}
                                             target="_blank">
                                 <ListItemIcon>
                                     <FaLinkedin />
@@ -72,7 +73,7 @@ const SideDrawer = () => {
 
                     <ListItem>
                         <Tooltip title={"Get in touch!"}>
-                            <ListItemButton href={"mailto: minovskimarco@gmail.com"} target="_blank">
+                            <ListItemButton href={"mailto: minovskimarco@gmail.com"} target="_blank" rel={"noopener"}>
                                 <ListItemIcon>
                                     <MdOutlineEmail />
                                 </ListItemIcon>
