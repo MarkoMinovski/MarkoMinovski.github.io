@@ -11,7 +11,7 @@ const PLanguageSkillsGrid = () => {
             <Box maxWidth="xs" className={"hello"} sx={{ display: 'flex', flexGrow: 1, alignItems: "center",
                 justifyContent: "center", marginBottom: '10rem' }}>
                 <Grid container spacing={2} sx={{ width: '75%', }}>
-                    <Grid size={4}>
+                    <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4 }}>
                         <Card sx={{ minWidth: 275, borderLeft: '5px solid #306998', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -38,7 +38,7 @@ const PLanguageSkillsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={4}>
+                    <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4 }}>
                         <Card sx={{ minWidth: 275, borderLeft: '5px solid #f89820', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -65,7 +65,7 @@ const PLanguageSkillsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={4}>
+                    <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4 }}>
                         <Card sx={{ minWidth: 275, borderLeft: '5px solid #f7df1e', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" justifyContent={'evenly'} mb={1}>

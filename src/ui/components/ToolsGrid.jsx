@@ -12,8 +12,8 @@ const ToolsGrid = () => {
                 Knowledge of Dev Tools:</Typography>
             <Box maxWidth="xs" className={"hello"} sx={{ display: 'flex', flexGrow: 1, alignItems: "center",
                 justifyContent: "center", marginBottom: '10rem', textAlign: "center" }}>
-                <Grid container spacing={2} sx={{ width: '75%', }}>
-                    <Grid size={2}>
+                <Grid container spacing={2} sx={{ width: '75%', justifyContent: 'center', alignItems: 'center' }}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #0db7ed', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -28,7 +28,7 @@ const ToolsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #f05032', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -43,7 +43,7 @@ const ToolsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #326ce5', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -58,7 +58,7 @@ const ToolsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #47a248', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -73,7 +73,7 @@ const ToolsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #0078D4', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
@@ -88,7 +88,7 @@ const ToolsGrid = () => {
                         </Card>
                     </Grid>
 
-                    <Grid size={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
                         <Card sx={{ minWidth: 137, borderRight: '5px solid #336791', boxShadow: 3, borderRadius: 2 }}>
                             <CardContent>
                                 <Box display="flex" alignItems="center" mb={1}>
