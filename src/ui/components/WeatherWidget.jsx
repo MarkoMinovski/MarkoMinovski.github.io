@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {weatherCodesAndAssociatedSVGDict, weatherCodeAndAssociatedDescriptor} from "../../mui-helpers/open-meteo-weather-codes.js";
-import {Card, CardContent, Typography, Box, LinearProgress} from "@mui/material";
+import {Card, CardContent, Typography, Box, LinearProgress, Divider} from "@mui/material";
 
 function GetWeatherSVGFromCode(weather_code, isDay) {
     if (weather_code == null) return null;
@@ -54,24 +54,18 @@ const WeatherWidget = () => {
                 isLoading ? <LinearProgress></LinearProgress>
                     :
                     <Card sx={{width: '50%', borderRadius: 4, boxShadow: 3}}>
-                        <CardContent sx={{ display: 'flex', justifyContent: 'evenly', alignItems: 'center' }}>
-                            {/*<Typography variant="h5" gutterBottom>Skopje</Typography>
-                            <Typography variant="subtitle2" color="text.secondary">{weatherData.hour}:00</Typography>
+                        <CardContent sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' },
+                            justifyContent: 'evenly', alignItems: 'center' }}>
 
-                            <Box my={2} sx={{ display: 'flex', justifyContent: 'end' }}>
-                                {GetWeatherSVGFromCode(weatherData.weather_code, weatherData.isDay)}
-                            </Box>
-
-                            <Typography variant="body1" align="center">{weatherData.description}</Typography>
-                            <Typography variant="h4" align="center" mt={1}>{weatherData.temperature_2m}°C</Typography>*/}
-
-                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'evenly', alignItems: 'center',
+                            <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'evenly', alignItems: 'center',
                                 flexDirection: 'column' }}>
                                 <Typography variant="h3" gutterBottom>Skopje</Typography>
                                 <Typography variant="h6" color="text.secondary">{weatherData.hour}:00</Typography>
                             </Box>
 
-                            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'evenly', alignItems: 'center',
+                            <Divider orientation="vertical"></Divider>
+
+                            <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'evenly', alignItems: 'center',
                                 flexDirection: 'column' }}>
                                 <Box sx={{ display: 'flex', justifyContent: 'end' }}>
                                     {GetWeatherSVGFromCode(weatherData.weather_code, weatherData.isDay)}
