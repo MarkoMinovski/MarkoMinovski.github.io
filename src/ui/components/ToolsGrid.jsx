@@ -106,10 +106,7 @@ const ToolsGrid = () => {
 
                 </Grid>
             </Box>
-            <Typography variant="h5" sx={{ fontWeight: 'light', textAlign: 'center', marginBottom: '5rem' }}>
-                <Link href={"https://github.com/MarkoMinovski/MarkoMinovski.github.io"}
-                                   underline={"hover"} target={"_blank"}>Source code</Link>
-            </Typography>
+
 
         </>
     )
